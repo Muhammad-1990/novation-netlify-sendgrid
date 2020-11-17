@@ -1,0 +1,37 @@
+{
+  "name": "novation-netlify-sendgrid",
+  "version": "1.0.0",
+  "description": "A netlify serverless function that sends emails via sendgrid",
+  "main": "index.js",
+  "scripts": {
+    "start": "netlify-lambda serve functions",
+    "build": "netlify-lambda build functions",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Muhammad-1990/novation-netlify-sendgrid.git"
+  },
+  "hositng": {
+    "production": "https://stupefied-golick-7a9f2b.netlify.app/.netlify/functions/test"
+  },
+  "keywords": [
+    "netlify",
+    "sendgrid",
+    "serverless",
+    "lambda"
+  ],
+  "author": "Novation Tech",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Muhammad-1990/novation-netlify-sendgrid/issues"
+  },
+  "homepage": "https://github.com/Muhammad-1990/novation-netlify-sendgrid#readme",
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "netlify-lambda": "^2.0.1"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^7.4.0"
+  }
+}
