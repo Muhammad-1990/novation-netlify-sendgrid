@@ -21,6 +21,7 @@ exports.handler = async (event, context, callback) => {
     } catch (e) {
         return {
             statusCode: e.code,
+            headers: { "Access-Control-Allow-Origin": "*" },
             body: e.message
         }
     }
