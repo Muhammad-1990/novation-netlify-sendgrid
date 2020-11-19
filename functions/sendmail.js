@@ -1,4 +1,3 @@
-require('dotenv').config()
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 exports.handler = async (event, context, callback) => {
@@ -17,7 +16,7 @@ exports.handler = async (event, context, callback) => {
         return {
             statusCode: 200,
             headers: { "Access-Control-Allow-Origin": "*" },
-            body: "Message sent successfully"
+            body: "Thank you. We have recieved your request and will be in touch soon."
         }
     } catch (e) {
         return {

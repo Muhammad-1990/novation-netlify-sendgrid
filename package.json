@@ -28,7 +28,6 @@
   },
   "homepage": "https://github.com/Muhammad-1990/novation-netlify-sendgrid#readme",
   "devDependencies": {
-    "dotenv": "^8.2.0",
     "netlify-lambda": "^2.0.1"
   },
   "dependencies": {
