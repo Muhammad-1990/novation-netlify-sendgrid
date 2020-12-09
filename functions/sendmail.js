@@ -6,8 +6,8 @@ exports.handler = async (event, context, callback) => {
         return `${k}: ${data[k]}`
     }).join("<br><br>");
     const mail_to_send = {
-        to: process.env.SENDGRID_API_MAIL_TO,
-        from: process.env.SENDGRID_API_MAIL_FROM,
+        to: process.env.SENDGRID_API_MAIL_TO || "info@novationtech.co.za",
+        from: process.env.SENDGRID_API_MAIL_FROM || "info@novationtech.co.za",
         subject: 'New Entry from Website',
         html: body,
     };
