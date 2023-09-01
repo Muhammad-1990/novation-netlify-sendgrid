@@ -2,12 +2,16 @@ const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 exports.handler = async (event, context, callback) => {
     const data = JSON.parse(event.body)
+    var email = "info@novationtech.co.za";
+    if(data["Subject"].includes("LouwCooperRasool")){
+        email = "info@louwcooper.co.za"
+    }
     const body = Object.keys(data).map((k) => {
         return `${k}: ${data[k]}`
     }).join("<br><br>");
     const mail_to_send = {
-        to: process.env.SENDGRID_API_MAIL_TO || "info@novationtech.co.za",
-        from: process.env.SENDGRID_API_MAIL_FROM || "info@novationtech.co.za",
+        to: email,
+        from: email,
         subject: 'New Entry from Website',
         html: body,
     };
