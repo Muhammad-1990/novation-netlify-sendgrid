@@ -19,7 +19,7 @@ exports.handler = async (event, context, callback) => {
     
         const mailTransport = nodemailer.createTransport(transportOptions);
     console.log('sending');
-        mailTransport.sendMail({
+        await mailTransport.sendMail({
             from: email,
             to: email,
             replyTo: email,
