@@ -1,12 +1,12 @@
-const nodemailer = require('nodemailer');
+var nodemailer = require('nodemailer');
 
 exports.handler = async (event, context, callback) => {
-    console.log('in handler');
-    const data = JSON.parse(event.body)
+   // console.log('in handler');
+   // const data = JSON.parse(event.body)
     var email = "info@louwcooper.co.za";
-    const body = Object.keys(data).map((k) => {
-        return `${k}: ${data[k]}`
-    }).join("<br><br>");
+   // const body = Object.keys(data).map((k) => {
+  //      return `${k}: ${data[k]}`
+  //  }).join("<br><br>");
 
     try {
       const transportOptions = {
@@ -25,7 +25,7 @@ exports.handler = async (event, context, callback) => {
             replyTo: email,
             subject: "New Entry from Website",
             html:"",
-            text: body
+            text: "test"
         });
       console.log('return');
         return {
