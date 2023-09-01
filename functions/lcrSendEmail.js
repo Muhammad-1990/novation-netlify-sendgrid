@@ -1,6 +1,7 @@
 const nodemailer = require('nodemailer');
 
 exports.handler = async (event, context, callback) => {
+    console.log('in handler');
     const data = JSON.parse(event.body)
     var email = "info@louwcooper.co.za";
     const body = Object.keys(data).map((k) => {
@@ -17,8 +18,8 @@ exports.handler = async (event, context, callback) => {
         };
     
         const mailTransport = nodemailer.createTransport(transportOptions);
-    
-        await mailTransport.sendMail({
+    console.log('sending');
+        mailTransport.sendMail({
             from: email,
             to: email,
             replyTo: email,
@@ -26,7 +27,7 @@ exports.handler = async (event, context, callback) => {
             html:"",
             text: body
         });
-      
+      console.log('return');
         return {
             statusCode: 200,
             headers: { "Access-Control-Allow-Origin": "*" },
