@@ -11,7 +11,7 @@ exports.handler = async (event, context, callback) => {
     }).join("<br><br>");
     const mail_to_send = {
         to: email,
-        from: "info@novationtech.co.za",
+        from: email,
         subject: 'New Entry from Website',
         html: body,
     };
